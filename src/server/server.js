@@ -515,7 +515,7 @@ function tickPlayer(currentPlayer) {
             var numUser = util.findIndex(users, collision.bUser.id);
             if (numUser > -1) {
                 if(users[numUser].cells.length > 1) {
-                    users[numUser].massTotal -= collision.bUser.mass;
+                    users[numUser].massTotal >= collision.bUser.mass;
                     users[numUser].cells.splice(collision.bUser.num, 1);
                 } else {
                     users.splice(numUser, 1);
