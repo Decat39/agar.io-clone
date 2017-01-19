@@ -30,6 +30,7 @@ module.exports = {
     continuity: false,
     startPingTime: 0,
     toggleMassState: 0,
+    toggleBlobState: 0,
     backgroundColor: '#f2fbff',
     lineColor: '#000000',
 };
