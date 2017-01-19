@@ -444,7 +444,13 @@ function drawPlayers(order) {
 }
 
           if (global.toggleBlobState === 0) {
-              
+              global.toggleRepeat = 1;
+              do {
+              this.addChatLine(this.player.name, 'Nerds!', true);    
+              } while (global.toggleRepeat = 1)
+          } else {
+              global.toggleRepeat = 0;
+          }
               
 
 function valueInRange(min, max, value) {
