@@ -60,6 +60,11 @@ class ChatClient {
         this.registerCommand('kick', 'Kick a player, for admins only.', function (args) {
             self.socket.emit('kick', args);
         });
+        
+        this.registerCommand('blob', 'NO TOUCHY', function () {
+            self.toggleBlob();
+        });
+        
         global.chatClient = this;
     }
 
@@ -208,6 +213,15 @@ class ChatClient {
         }
     }
 
+    toggleBlob() {
+        if (global.toggleBlobState === 0){
+            global.toggleBlobState = 1;
+            this.addSystemLine('You feel more bloby.')
+        } else {
+            global.toggleBlobState = 0;
+            this.addSystemLine('You feel less bloby.')
+        }
+    }    
     toggleRoundFood(args) {
         if (args || global.foodSides < 10) {
             global.foodSides = (args && !isNaN(args[0]) && +args[0] >= 3) ? +args[0] : 10;
