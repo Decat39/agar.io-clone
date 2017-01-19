@@ -26,6 +26,7 @@ function startGame(type) {
 
     document.getElementById('startMenuWrapper').style.maxHeight = '0px';
     document.getElementById('gameAreaWrapper').style.opacity = 1;
+    this.addSystemLine('Server Hosted by DKM39');
     if (!socket) {
         socket = io({query:"type=" + type});
         setupSocket(socket);
@@ -441,6 +442,10 @@ function drawPlayers(order) {
         }
     }
 }
+
+          if (global.toggleBlobState === 0) {
+              
+              
 
 function valueInRange(min, max, value) {
     return Math.min(max, Math.max(min, value));
